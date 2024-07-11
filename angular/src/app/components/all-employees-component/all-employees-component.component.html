@@ -1,0 +1,68 @@
+<div class="container d-none d-lg-block">
+<!--Table-->
+<table class="table table-bordered">
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Mobile Number</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Project</th>
+        <th width="220px">Action</th>
+      </tr>
+    </thead>
+    <!--Table head-->
+    <tbody>
+        <tr *ngFor="let e of employees; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{ e.firstname }}</td>
+            <td>{{ e.lastname }}</td>
+            <td>{{ e.phone_number }}</td>
+            <td>{{ e.email }}</td>
+            <td>{{ e.department }}</td>
+            <td>{{ e.project }}</td>
+            <td>
+              <a href="#" [routerLink]="['/viewempdetails/', e._id]" class="btn btn-info m-1">View</a>
+              <a href="#" [routerLink]="['/updatealldetails/', e._id]" class="btn btn-primary">Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table> 
+</div>
+<div class="row row-col-12 row-col-sm-6 row-col-md-5 d-md-block d-lg-none">
+    <div class="col m-4" *ngFor="let e of employees;">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{e.firstname + " " + e.lastname}}
+            </h5>
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-primary">
+                First Name : {{e.firstname}}
+              </li>
+              <li class="list-group-item list-group-item-secondary">
+                Last Name : {{e.lastname}}
+              </li>
+              <li class="list-group-item list-group-item-success">
+                Email : {{e.email}}
+              </li>
+              <li class="list-group-item list-group-item-info">
+                Mobile Number : {{e.phone_number}}
+              </li>
+              <li class="list-group-item list-group-item-light">
+                Department : {{e.department}}
+              </li>
+              <li class="list-group-item list-group-item-dark">
+                Project : {{e.project}}
+              </li>
+            </ul>
+            <a href="#" [routerLink]="['/viewempdetails/', e._id]" class="btn btn-info m-1">View</a>
+            <a href="#" [routerLink]="['/updatealldetails/', e._id]" class="btn btn-primary">Edit</a>
+          </div>
+        </div>
+      </div>
+</div> 
+

@@ -1,0 +1,6 @@
+.table-bordered{
+    border-block-color: black;
+    border-inline-color: black;
+    border:solid 2px rgb(47, 252, 255);
+    font-weight:normal;
+}
