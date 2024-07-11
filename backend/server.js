@@ -37,7 +37,7 @@ app.delete('/delete_details', delete_handler)
 app.delete('/deletebyId/:id', delete_handler_byID)
 
 //listening to server
-mongoose.connect("mongodb+srv://vinayjujjuri:vinay911146@cluster0.gefif.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongoose.connect("mongodb://localhost:27017/emp_curd")
 .then(()=>{
     app.listen(4000, ()=>{
         console.log("server started and listening in port 4000")
