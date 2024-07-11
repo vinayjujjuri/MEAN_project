@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="col-md-6 col-12">
+        <div class="col m-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{employees.firstname + " " + employees.lastname}}
+              </h5>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-primary">
+                  First Name : {{employees.firstname}}
+                </li>
+                <li class="list-group-item list-group-item-secondary">
+                  Last Name : {{employees.lastname}}
+                </li>
+                <li class="list-group-item list-group-item-success">
+                  Email : {{employees.email}}
+                </li>
+                <li class="list-group-item list-group-item-info">
+                  Mobile Number : {{employees.phone_number}}
+                </li>
+                <li class="list-group-item list-group-item-light">
+                  Department : {{employees.department}}
+                </li>
+                <li class="list-group-item list-group-item-dark">
+                  Project : {{employees.project}}
+                </li>
+              </ul>
+              <a href="#" [routerLink]="['/updatealldetails/', employees._id]" class="btn btn-primary mt-1">Edit</a> 
+              <button type="submit" (click)="deleteEmp()" class="btn btn-danger m-3">Delete</button>  
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
