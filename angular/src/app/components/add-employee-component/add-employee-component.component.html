@@ -1,0 +1,74 @@
+<div class="login-page">
+  <div class="form">
+    <h3>Register Employee Details</h3>
+    <br>
+    <br>
+    <form class="login-form" [formGroup]="form">
+      <input type="text" formControlName="firstname" placeholder="Enter Your First Name"
+        (keyup)="getEmployeeName($event)" value="{{ employee.firstname }}" 
+        [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }"
+        required />
+        <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+          <p *ngIf="f['firstname'].errors && f['firstname'].errors['required']">First Name is required.</p>
+          <p *ngIf="f['firstname'].errors && f['firstname'].errors['pattern']">First Name should be alphabets.</p>
+          <p *ngIf="f['firstname'].errors && f['firstname'].errors['minlength']">First Name must be at least 6 characters</p>
+          <p *ngIf="f['firstname'].errors && f['firstname'].errors['maxlength']">First Name must not exceed 20 characters</p>
+        </div>
+      <input type="text" formControlName="lastname" placeholder="Enter Your Last Name" (keyup)="getLastName($event)"
+        value="{{ employee.lastname }}"
+        [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }"
+        required />
+        <div *ngIf="submitted && f['lastname'].errors" class="invalid-feedback">
+          <p *ngIf="f['lastname'].errors && f['lastname'].errors['required']">Last Name is required.</p>
+          <p *ngIf="f['lastname'].errors && f['lastname'].errors['pattern']">Last Name should be alphabets.</p>
+          <p *ngIf="f['lastname'].errors && f['lastname'].errors['minlength']">Last Name must be at least 6 characters</p>
+          <p *ngIf="f['lastname'].errors && f['lastname'].errors['maxlength']">Last Name must not exceed 20 characters</p>
+        </div>
+      <input type="text" formControlName="email" placeholder="Enter Email" (keyup)="getEmail($event)"
+        value="{{ employee.email }}" 
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+        required />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <p *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</p>
+          <p *ngIf="f['email'].errors && f['email'].errors['email']">Enter Valid EmailId </p>
+        </div>
+      <input type="text" formControlName="phone_number" placeholder="Enter Mobile Number" (keyup)="getPhoneno($event)"
+         value="{{ employee.phone_number }}" 
+         [ngClass]="{ 'is-invalid': submitted && f['phone_number'].errors }"
+        required />
+        <div *ngIf="submitted && f['phone_number'].errors" class="invalid-feedback">
+          <p *ngIf="f['phone_number'].errors && f['phone_number'].errors['required']">Mobile Number is required.</p>
+          <p *ngIf="f['phone_number'].errors && f['phone_number'].errors['pattern']">Mobile Number should be Numbers.</p>
+          <p *ngIf="f['phone_number'].errors && f['phone_number'].errors['minlength']">Mobile Number must be 10 digits only</p>
+          <p *ngIf="f['phone_number'].errors && f['phone_number'].errors['maxlength']">Mobile Number must be 10 digits only</p>
+        </div>
+      <input type="text" formControlName="department" placeholder="Enter Department" (keyup)="getDepartment($event)"
+        value="{{ employee.department }}" 
+        [ngClass]="{ 'is-invalid': submitted && f['department'].errors }"
+        required />
+        <div *ngIf="submitted && f['department'].errors" class="invalid-feedback">
+          <p *ngIf="f['department'].errors && f['department'].errors['required']">Department is required.</p>
+          <p *ngIf="f['department'].errors && f['department'].errors['pattern']">Department should be alphabets.</p>
+          <p *ngIf="f['department'].errors && f['department'].errors['minlength']">Department must be at least 6 characters</p>
+          <p *ngIf="f['department'].errors && f['department'].errors['maxlength']">Department must not exceed 20 characters</p>
+        </div>
+      <input type="text" formControlName="project" placeholder="Enter Project" (keyup)="getProject($event)"
+        value="{{ employee.project }}" required 
+        [ngClass]="{ 'is-invalid': submitted && f['project'].errors }"/>
+        <div *ngIf="submitted && f['project'].errors" class="invalid-feedback">
+          <p *ngIf="f['project'].errors && f['project'].errors['required']">Project is required.</p>
+          <p *ngIf="f['project'].errors && f['project'].errors['pattern']">Project should be alphabets.</p>
+          <p *ngIf="f['project'].errors && f['project'].errors['minlength']">Project must be at least 6 characters</p>
+          <p *ngIf="f['project'].errors && f['project'].errors['maxlength']">Project must not exceed 20 characters</p>
+        </div>
+      <button type="submit" (click)="submitForm()">Register</button>
+    </form>
+    <div class="row" *ngIf="showMsg">
+      <div class="col-xs-12">
+        <p class="alert alert-success">
+          <strong>Registration Success!</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
