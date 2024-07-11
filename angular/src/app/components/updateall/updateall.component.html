@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-12">
+      <div class="col m-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-body">
+              <h5 class="card-title">
+                Update Employee Details
+              </h5>
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputfirstname">First Name</label>
+                  <input type="text" class="form-control" id="exampleInputfirstname" (keyup)="getEmployeeName($event)"
+                  value="{{ employees.firstname }}" placeholder="Enter First Name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputlastname">Last Name</label>
+                  <input type="text" class="form-control" id="exampleInputlastname" (keyup)="getLastName($event)"
+                  value="{{ employees.lastname }}" placeholder="Enter Last Name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1"   (keyup)="getEmail($event)"
+                  value="{{ employees.email }}" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputphonenumber">Mobile Number</label>
+                  <input type="number" class="form-control" id="exampleInputphonenumber"  (keyup)="getPhoneno($event)"
+                  value="{{ employees.phone_number }}" placeholder="Mobile Number">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputdepartment">Department</label>
+                  <input type="text" class="form-control" id="exampleInputdepartment" (keyup)="getDepartment($event)"
+                  value="{{ employees.department }}" placeholder="Department">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputproject">Project</label>
+                  <input type="text" class="form-control" id="exampleInputproject"  (keyup)="getProject($event)"
+                  value="{{ employees.project }}" placeholder="Project">
+                </div>
+                <button type="submit" class="btn btn-primary mt-3" (click)="updateForm()">Update</button>
+              </form>
+            </div>
+            <div class="row"  *ngIf="showMsg">
+              <div class="col-xs-12">
+                <p class="alert alert-success">
+                    <strong>Updated Success!</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
